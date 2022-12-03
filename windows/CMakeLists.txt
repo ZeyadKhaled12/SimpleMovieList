@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(spy LANGUAGES CXX)
+project(movies_app LANGUAGES CXX)
 
-set(BINARY_NAME "spy")
+set(BINARY_NAME "movies_app")
 
 cmake_policy(SET CMP0063 NEW)
 

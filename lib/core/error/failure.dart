@@ -15,4 +15,5 @@ class ServerFailure extends Failure{
 
 class DataBaseFailure extends Failure{
   const DataBaseFailure(String message) : super(message);
+
 }

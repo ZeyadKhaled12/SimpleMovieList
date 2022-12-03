@@ -1,19 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 
 class ErrorMessageModel extends Equatable {
+  final int statusCode;
   final String statusMessage;
   final bool success;
 
   const ErrorMessageModel({
+    required this.statusCode,
     required this.statusMessage,
     required this.success
   });
 
-  factory ErrorMessageModel.fromJson(FirebaseException e) =>
+  factory ErrorMessageModel.fromJson(Map<String, dynamic> json) =>
       ErrorMessageModel(
-          statusMessage: e.message!,
-          success: e.message!.isEmpty? true:false);
+          statusCode: json['status_code'],
+          statusMessage: json['status_message'],
+          success: json['success']);
 
   @override
   List<Object?> get props => throw UnimplementedError();
